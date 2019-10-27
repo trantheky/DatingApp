@@ -1,3 +1,4 @@
+import { ListsResolver } from './_resolvers/lists.resolver';
 import { MemberEditResolve } from './_resolvers/member-edit.resolver';
 import { MemberListResolve } from './_resolvers/member-list.resolver';
 import { UserService } from './_services/user.service';
@@ -92,7 +93,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MemberEditResolve,
       PreventUnsavedChanges,
       UserService,
-      { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
+      { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig },
+      ListsResolver
    ],
    bootstrap: [
       AppComponent
